@@ -2,6 +2,7 @@ import { Button, Form, Segment, Container} from 'semantic-ui-react';
 import React, {useState} from 'react';
 import ViewListings from './viewListings';
 import CreateListings from './CreateLisintgs'
+import Listing from './listingsStyling/Listing.module.css'
 
 function myfunction(){
     console.log("hi");
@@ -19,18 +20,13 @@ const JobListing = (props) =>
     };
 
 return (
-    <div className="column1">
+    <div className={Listing.Listing}>
         <h1>This is the hub for all things job listing related! k3c2</h1>
         <CreateListings
             displayForm={displayForm}
             updateDisplayForm={updateDisplayForm}
             />
-                <Container textAlign='center'>
-                    <Button type="submit" circular size='big' color='violet'>
-                        create job listings
-                    </Button>
-                </Container>
-        <div className="column2">
+        <div className={Listing.Listing}>
             <ViewListings 
             listings={listings}
             updateListings={updateListings}
